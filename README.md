@@ -6,7 +6,7 @@
 - Instalacion automatica de MYSQL
 - Instalacion automatica de PhPMyAdmin
 - Instalacion de HTOP
-- 
+- Instalacion de Spigot
 ## Soporte OS
 
 Versiones disponibles
