@@ -10,8 +10,27 @@ set -e
 #
 #     Pagina Web: www.luistec.cloud
 
-sudo apt install figlet -y
-sudo apt install lolcat -y
+
+inst_components () {
+[[ $(dpkg --get-selections|grep -w "nano"|head -1) ]] || apt-get install nano -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "figlet"|head -1) ]] || apt-get install figlet -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "screen"|head -1) ]] || apt-get install screen -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] || apt-get install python -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "python3"|head -1) ]] || apt-get install python3 -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "curl"|head -1) ]] || apt-get install curl -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "ufw"|head -1) ]] || apt-get install ufw -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "unzip"|head -1) ]] || apt-get install unzip -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || apt-get install zip -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "lolcat"|head -1) ]] || apt-get install lolcat -y &>/dev/null
+[[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || {
+ apt-get install apache2 -y &>/dev/null
+ sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
+ service apache2 restart > /dev/null 2>&1 &
+ }
+apt-get install python-pip build-essential python-dev &>/dev/null
+pip install Glances &>/dev/null
+pip install PySensors &>/dev/null
+}
 
 LOG_PATH="/home/latamtec.log"
 
@@ -60,7 +79,7 @@ PHPMYADMIN_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/ins
 
 HTOP_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-htop.sh"
 
-SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-spigot.sh"
+SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh"
 
 #RECURSOS NESECARIOS NO ELIMINAR #
 
@@ -73,7 +92,7 @@ while [ "$done" == false ]; do
     "Instalar Monitor HTOP"
     "Instalar Descargar Spigot (Versiones Soportadas 1.7 - 1.18)"
 
-    "Instalar Todo (Java, PhPMyAdmin, UFW, Spigot, Mysql) (No Disponible)"
+    "Instalar Todo (Java, PhPMyAdmin, UFW, Spigot, Mysql)"
   )
 
   actions=(
