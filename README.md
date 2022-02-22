@@ -23,5 +23,5 @@ Versiones disponibles
 Use el siguiente comando para ejecutar el Script
 
 ```bash
-bash <(curl -s https://pterodactyl-installer.se)
+bash <(curl -s https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh)
 ```
