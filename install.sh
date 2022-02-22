@@ -52,15 +52,15 @@ output "Este script no esta asociado con Minecraft Mojang"
 
 # RECURSOS NESECARIOS NO ELIMINAR #
 
-JAVA_INSTALL="$GITHUB_BASE_URL/$SCRIPT_VERSION/install-panel.sh"
+JAVA_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-java.sh"
 
-MYSQL_INSTALL="$GITHUB_BASE_URL/$SCRIPT_VERSION/install-wings.sh"
+MYSQL_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-mysql.sh"
 
-PHPMYADMIN_INSTALL="$GITHUB_BASE_URL/$SCRIPT_VERSION/legacy/panel_0.7.sh"
+PHPMYADMIN_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-phpmyadmin.sh"
 
-HTOP_INSTALL="$GITHUB_BASE_URL/$SCRIPT_VERSION/legacy/daemon_0.6.sh"
+HTOP_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-htop.sh"
 
-SPIGOT_INSTALL="$GITHUB_BASE_URL/master/install-panel.sh"
+SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh"
 
 INSTALL_ALL=""
 
@@ -75,7 +75,7 @@ while [ "$done" == false ]; do
     "Instalar Monitor HTOP"
     "Instalar Descargar Spigot (Versiones Soportadas 1.7 - 1.18)"
 
-    "Instalar Todo (Java, PhPMyAdmin, UFW, Spigot, Mysql)"
+    "Instalar Todo (Java, PhPMyAdmin, UFW, Spigot, Mysql) (No Disponible)"
   )
 
   actions=(
