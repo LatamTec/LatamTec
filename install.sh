@@ -60,9 +60,7 @@ PHPMYADMIN_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/ins
 
 HTOP_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-htop.sh"
 
-SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh"
-
-INSTALL_ALL=""
+SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-spigot.sh"
 
 #RECURSOS NESECARIOS NO ELIMINAR #
 
