@@ -1,14 +1,14 @@
 #!/bin/bash
 
 set -e
-
+cd $HOME
 #
 #  Latamtec Instalador @ KalixCloud
 #
 # Instalador de complementos para Servidores
 # de minecraft en VPS UBUNTU | 18.04 20.04 |
 #
-#     Pagina Web: www.luistec.cloud
+#     Pagina Web: https://theboykiss.ovh
 
 
 inst_components () {
@@ -79,7 +79,7 @@ PHPMYADMIN_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/ins
 
 HTOP_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-htop.sh"
 
-SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh"
+SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-spigot.sh"
 
 #RECURSOS NESECARIOS NO ELIMINAR #
 
