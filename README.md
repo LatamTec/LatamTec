@@ -11,7 +11,7 @@
 
 Versiones disponibles
 
-### Lista de SIstemas operativos
+### Lista de Sistemas operativos
 
 | Operating System | Version | Disponible         |
 | ---------------- | ------- | ------------------ |
