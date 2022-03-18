@@ -19,11 +19,9 @@ if [[ $EUID -ne 0 ]]; then
   exit 1
 fi
 
-figlet -f standard "Latam HTop" | lolcat
-echo "Instalando HTop en su Maquina" | lolcat
+echo -e "\n\033[1;36mInstalando HTop en su Maquina"
 
 sudo apt-get install htop -y
 
-echo "Instalacion Completada" | lolcat
-echo "Para abrir el Monitor use: sudo htop" | lolcat
+tput setaf 7 ; tput setab 4 ; tput bold ; printf '%35s%s%-20s\n' "Instalacion Completada HTOP" ; tput sgr0
 
