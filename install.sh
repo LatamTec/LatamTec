@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-cd $HOME
+
 #
 #  Latamtec Instalador @ KalixCloud
 #
@@ -10,27 +10,11 @@ cd $HOME
 #
 #     Pagina Web: https://theboykiss.ovh
 
-
-inst_components () {
-[[ $(dpkg --get-selections|grep -w "nano"|head -1) ]] || apt-get install nano -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "figlet"|head -1) ]] || apt-get install figlet -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "screen"|head -1) ]] || apt-get install screen -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "python"|head -1) ]] || apt-get install python -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "python3"|head -1) ]] || apt-get install python3 -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "curl"|head -1) ]] || apt-get install curl -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "ufw"|head -1) ]] || apt-get install ufw -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "unzip"|head -1) ]] || apt-get install unzip -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "zip"|head -1) ]] || apt-get install zip -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "lolcat"|head -1) ]] || apt-get install lolcat -y &>/dev/null
-[[ $(dpkg --get-selections|grep -w "apache2"|head -1) ]] || {
- apt-get install apache2 -y &>/dev/null
- sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
- service apache2 restart > /dev/null 2>&1 &
- }
-apt-get install python-pip build-essential python-dev &>/dev/null
-pip install Glances &>/dev/null
-pip install PySensors &>/dev/null
-}
+apt-get -y update
+apt-get -y upgrade
+apt-get -y autoremove
+apt-get -y autoclean
+apt-get -y install curl
 
 LOG_PATH="/home/latamtec.log"
 
@@ -62,14 +46,14 @@ execute() {
 
 done=false
 
-output "Latamtec Instalador script @ v1.0"
-output
-output "Copyright (C) 2022, Luis Gonzales, <contacto@network.luistec.cloud>"
-output "https://github.com/latamtec/install.sh"
-output
-output "Este script no esta asociado con Minecraft Mojang"
+echo -e "\n\033[1;36mMinecraft Instalador || By TheBoykissOld @ v1.0"
+echo ""
+echo -e "\n\033[1;36mCopyright (C) 2022, Luis Gonzales, <admin@theboykiss.cloud>"
+echo -e "\n\033[1;36mhttps://github.com/LatamTec/LatamTec/"
+echo ""
+echo -e "\n\033[1;36mEste script no esta asociado con Minecraft Mojang"
 
-# RECURSOS NESECARIOS NO ELIMINAR #
+############ RECURSOS NESECARIOS NO ELIMINAR #
 
 JAVA_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-java.sh"
 
@@ -79,9 +63,9 @@ PHPMYADMIN_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/ins
 
 HTOP_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-htop.sh"
 
-SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-spigot.sh"
+SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh"
 
-#RECURSOS NESECARIOS NO ELIMINAR #
+############ RECURSOS NESECARIOS NO ELIMINAR #
 
 while [ "$done" == false ]; do
   options=(
@@ -89,10 +73,10 @@ while [ "$done" == false ]; do
     "Instalar MySQL"
 
     "Instalar PhPMyAdmin"
-    "Instalar Monitor HTOP"
-    "Instalar Descargar Spigot (Versiones Soportadas 1.7 - 1.18)"
+    "Instalar Monitor HTOP (Monitor de Consumo)"
+    "Instalar Descargar Spigot (Versiones 1.7 - 1.18)"
 
-    "Instalar Todo (Java, PhPMyAdmin, UFW, Spigot, Mysql)"
+    "Instalar Todo (Aun no Disponible)"
   )
 
   actions=(
@@ -103,10 +87,10 @@ while [ "$done" == false ]; do
     "$HTOP_INSTALL"
     "$SPIGOT_INSTALL"
 
-    "$JAVA_INSTALL;$MYSQL_INSTALL;$PHPMYADMIN_INSTALL;$UFW_INSTALL;$SPIGOT_INSTALL"
+    "$INSTALL"
   )
 
-  output "Selecciona una Opcion:"
+  echo "Selecciona una Opcion:"
 
   for i in "${!options[@]}"; do
     output "[$i] ${options[$i]}"
