@@ -57,13 +57,13 @@ echo -e "\n\033[1;36mEste script no esta asociado con Minecraft Mojang"
 
 JAVA_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-java.sh"
 
-MYSQL_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-mysql.sh"
+MYSQL_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-mariadb.sh"
 
 PHPMYADMIN_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-phpmyadmin.sh"
 
 HTOP_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-htop.sh"
 
-SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install.sh"
+SPIGOT_INSTALL="https://raw.githubusercontent.com/LatamTec/LatamTec/main/install-spigot.sh"
 
 ############ RECURSOS NESECARIOS NO ELIMINAR #
 
