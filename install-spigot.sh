@@ -8,7 +8,7 @@ set -e
 # Instalador de complementos para Servidores
 # de minecraft en VPS UBUNTU | 18.04 20.04 |
 #
-#     Pagina Web: www.luistec.cloud
+#     Pagina Web: https://theboykiss.ovh
 #
 
 ######## General checks #########
@@ -41,12 +41,12 @@ execute() {
 
 done=false
 
-output "Latamtec Instalador script @ v1.0"
-output
-output "Copyright (C) 2022, Luis Gonzales, <contacto@network.luistec.cloud>"
-output "https://github.com/LatamTec/LatamTec/blob/main/install.sh"
-output
-output "Este script no esta asociado con Minecraft Mojang"
+echo -e "\n\033[1;36mLatamtec Instalador script @ v1.0"
+echo ""
+echo -e "\n\033[1;36mCopyright (C) 2022, Luis Gonzales, <contacto@network.luistec.cloud>"
+echo -e "\n\033[1;36mhttps://github.com/LatamTec/LatamTec/"
+echo ""
+echo -e "\n\033[1;36mEste script no esta asociado con Minecraft Mojang"
 
 
 figlet -f standard "Latam Spigot" | lolcat
@@ -105,7 +105,7 @@ while [ "$done" == false ]; do
     "$SPIGOT17"
   )
 
-  output "Selecciona una Opcion:"
+  echo "Selecciona una Opcion:"
 
   for i in "${!options[@]}"; do
     output "[$i] ${options[$i]}"
